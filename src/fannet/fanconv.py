@@ -18,8 +18,6 @@ class FanConv(nn.Module):
         torch.nn.init.constant_(self.layer.bias, 0)
 
     def forward(self, x, indices):
-        #n_nodes, _ = indices.size()
-        #import pdb; pdb.set_trace()
         n_nodes = indices.size(dim=1)
         if x.dim() == 2:
             x = torch.index_select(x, 0, indices.view(-1))
@@ -27,14 +25,11 @@ class FanConv(nn.Module):
         elif x.dim() == 3:
             bs = x.size(0)
             x = torch.index_select(x, self.dim, indices.view(-1))
-            #######x_new = x.view(bs,n_nodes,self.seq_length,-1)
-            #######x = torch.mean(x_new,dim=2)
             x = x.view(bs, n_nodes, -1)
         else:
             raise RuntimeError(
                 'x.dim() is expected to be 2 or 3, but received {}'.format(
                     x.dim()))
-        #import pdb; pdb.set_trace()
         x = self.layer(x)
         return x
 

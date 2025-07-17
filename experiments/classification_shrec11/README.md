@@ -1,12 +1,12 @@
 This experiment classifies meshes from the SHREC2011 dataset in to 30 categories ('ant', 'pliers', 'laptop', etc). The dataset contains 20 meshes from each category, for a total of 600 inputs. The variants of each mesh are nonrigid deformed versions of one another, which makes intrinsic surface-based methods highly effective.
 
-As with past work, we use this dataset to test the effectiveness of our model with very small amounts of training data, and train on just 10 inputs per class, selected via random split. DiffusionNet gets nearly perfect accuracy, without any data augmentation (except random rotations to learn a rigid-invariant model when positional features are used as input).
+As with past work, we use this dataset to test the effectiveness of our model with very small amounts of training data, and train on just 10 inputs per class, selected via random split. FanNet gets nearly perfect accuracy, without any data augmentation when HKS (Heat Kernel Signature) features are used as input.
 
-The original dataset contained meshes of about 10,000 vertices, with imperfect mesh quality (some degenerate faces, etc). In the MeshCNN paper, these were simplified to high-quality meshes of <1000 vertices, which have been widely used in subsequent work. DiffusionNet is tested on both variants of the dataset, with similar results on each but a small improvement on the original high-resolution data. This repositiory has code and instructions for running on either dataset.
+The original dataset contained meshes of about 10,000 vertices, with imperfect mesh quality (some degenerate faces, etc). In the MeshCNN paper, these were simplified to high-quality meshes of <1000 vertices, which have been widely used in subsequent work. FanNet is tested on both variants of the dataset, with similar results on each but a small improvement on the original high-resolution data. This repositiory has code and instructions for running on either dataset.
 
 ### Data
 
-  The **original SHREC11 models** were previously distributed via NIST [here](https://www.nist.gov/itl/iad/shrec-2011-datasets), but that page seems to have been lost to the sands of time. We provide a zip of the old dataset page here: https://drive.google.com/uc?export=download&id=1O_P03aAxhjCOKQH2n71j013-EfSmEp5e. The relevant files are inside that archive, in the `SHREC11_test_database_new.zip` file, which is password protected with the password `SHREC11@NIST`. We also include the `data/original/categories.txt` file in this repositiory, giving ground truth labels.
+  The **original SHREC11 models** can be downloaded here: https://drive.google.com/uc?export=download&id=1O_P03aAxhjCOKQH2n71j013-EfSmEp5e. The relevant files are inside that archive, in the `SHREC11_test_database_new.zip` file, which is password protected with the password `SHREC11@NIST`. We also include the `data/original/categories.txt` file in this repositiory, giving ground truth labels.
 
   ```sh
   unzip SHREC2011_NonRigid.zip 
@@ -26,18 +26,13 @@ On each training run, we generate a random train/test split with 10 training inp
 To train the models on the **original** SHREC meshes, use
 
 ```python
-python classification_shrec11.py --dataset_type=original --input_features=hks
-```
-or, with positional coordinates as features
-```python
-python classification_shrec11.py --dataset_type=original --input_features=xyz
+python classification_shrec11.py --dataset_type=original --input_features=hks --spoke_length=0.0,0.02,0.04
 ```
 
 And likewise, to train on the simplified meshes
 
 ```python
-python classification_shrec11.py --dataset_type=simplified --input_features=hks
-python classification_shrec11.py --dataset_type=simplified --input_features=xyz
+python classification_shrec11.py --dataset_type=simplified --input_features=hks --spoke_length=0.0,0.1,0.2
 ```
 
 There will be variance in the final accuracy, because the networks generally predict just 0-3 test models incorrectly, and the test split is randomized. Perform multiple runs to get a good sample!

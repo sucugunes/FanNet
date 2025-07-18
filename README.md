@@ -9,7 +9,7 @@ The original dataset contained meshes of about 10,000 vertices, with imperfect m
 
 ### Prerequisites
 
-FanNet depends on pytorch, as well as a handful of other fairly typical numerical packages. These can usually be installed manually without much trouble, but alternately a conda environment file is also provided (see conda documentation for additional instructions). These package versions were tested with CUDA 11.7. 
+FanNet depends on pytorch, as well as a handful of other fairly typical numerical packages. These can usually be installed manually without much trouble, but alternately a conda environment file is also provided (see conda documentation for additional instructions). These package versions were tested with CUDA 11.7 on a Linux machine with Ubuntu 20.04.4 LTS. 
 
  ```sh
   conda env create --name fannet -f environment.yml

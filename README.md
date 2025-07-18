@@ -9,6 +9,13 @@ The original dataset contained meshes of about 10,000 vertices, with imperfect m
 
 ### Prerequisites
 
+FanNet depends on pytorch, as well as a handful of other fairly typical numerical packages. These can usually be installed manually without much trouble, but alternately a conda environment file is also provided (see conda documentation for additional instructions). These package versions were tested with CUDA 11.7. 
+
+ ```sh
+  conda env create --name fannet -f environment.yml
+  ```
+The code assumes a GPU with CUDA support. FanNet has minimal memory requirements; 8 GB GPU memory should be sufficient.
+
 ### Data
 
   The **original SHREC11 models** can be downloaded here: https://drive.google.com/uc?export=download&id=1O_P03aAxhjCOKQH2n71j013-EfSmEp5e. The relevant files are inside that archive, in the `SHREC11_test_database_new.zip` file, which is password protected with the password `SHREC11@NIST`. We also include the `data/original/categories.txt` file in this repositiory, giving ground truth labels.

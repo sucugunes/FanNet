@@ -38,7 +38,7 @@ After getting ready the data for original and simplified meshes, please go to th
 ```sh
 conda activate fannet
 ```
-Now we can start the training process. In order to replicate the results residing in the last two rows of Table 6 of the manuscript named "FanNet: A Mesh Convolution Operator for Learning Dense Maps", use the python commands below for original and simplified meshes respectively. As you can see input_features type should be hks and the spoke_length parameters should be used with the given values in the commands.
+Now we can start the training process. In order to replicate the results residing in the last two rows of Table 6 of the manuscript named "FanNet: A Mesh Convolution Operator for Learning Dense Maps", use the python commands below for original and simplified meshes respectively. As you can see input_features type should be hks and the spoke_length parameters should be set to given values in the commands.
 
 On each training run, we generate a random train/test split with 10 training inputs per-class.
 

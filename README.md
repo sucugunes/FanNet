@@ -7,6 +7,8 @@ As with past work, we use this dataset to test the effectiveness of our model wi
 
 The original dataset contained meshes of about 10,000 vertices, with imperfect mesh quality (some degenerate faces, etc). In the MeshCNN paper, these were simplified to high-quality meshes of <1000 vertices, which have been widely used in subsequent work. FanNet is tested on both variants of the dataset, with similar results on each but a small improvement on the original high-resolution data. This repositiory has code and instructions for running on either dataset.
 
+### Prerequisites
+
 ### Data
 
   The **original SHREC11 models** can be downloaded here: https://drive.google.com/uc?export=download&id=1O_P03aAxhjCOKQH2n71j013-EfSmEp5e. The relevant files are inside that archive, in the `SHREC11_test_database_new.zip` file, which is password protected with the password `SHREC11@NIST`. We also include the `data/original/categories.txt` file in this repositiory, giving ground truth labels.

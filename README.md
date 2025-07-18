@@ -1,5 +1,6 @@
 # FanNet
 
+## Classification Task
 This experiment classifies meshes from the SHREC2011 dataset in to 30 categories ('ant', 'pliers', 'laptop', etc). The dataset contains 20 meshes from each category, for a total of 600 inputs. The variants of each mesh are nonrigid deformed versions of one another, which makes intrinsic surface-based methods highly effective.
 
 As with past work, we use this dataset to test the effectiveness of our model with very small amounts of training data, and train on just 10 inputs per class, selected via random split. FanNet gets nearly perfect accuracy, without any data augmentation when HKS (Heat Kernel Signature) features are used as input.

@@ -1,4 +1,9 @@
-# FanNet
+# FanNet: A mesh convolution operator for learning dense maps
+By Güneş Sucu, Sinan Kalkan, Yusuf Sahillioğlu. (Computers & Graphics)
+
+In this work, we introduce a fast, simple and novel mesh convolution operator for learning dense shape correspondences. Instead of calculating weights between nodes, we explicitly aggregate node features by serializing neighboring vertices in a fan-shaped order. Thereafter, we use a fully connected layer to encode vertex features combined with the local neighborhood information. Finally, we feed the resulting features into the multi-resolution functional maps module to acquire the final maps. We demonstrate that our method works well in both supervised and unsupervised settings, and can be applied to isometric shapes with arbitrary triangulation and resolution. We evaluate the proposed method on two widely-used benchmark datasets, FAUST and SCAPE. Our results show that FanNet runs significantly faster and provides on-par or better performance than the related state-of-the-art shape correspondence methods.
+
+<img width="785" height="282" alt="pipeline" src="https://github.com/user-attachments/assets/db5fd11b-935a-404b-aea5-79876bc21ef2" />
 
 ## Classification Task
 This experiment classifies meshes from the SHREC2011 dataset in to 30 categories ('ant', 'pliers', 'laptop', etc). The dataset contains 20 meshes from each category, for a total of 600 inputs. The variants of each mesh are nonrigid deformed versions of one another, which makes intrinsic surface-based methods highly effective.

@@ -1,5 +1,8 @@
 # FanNet
 
+## Correspondence Task
+Will be available soon!
+
 ## Classification Task
 This experiment classifies meshes from the SHREC2011 dataset in to 30 categories ('ant', 'pliers', 'laptop', etc). The dataset contains 20 meshes from each category, for a total of 600 inputs. The variants of each mesh are nonrigid deformed versions of one another, which makes intrinsic surface-based methods highly effective.
 

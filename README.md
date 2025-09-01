@@ -1,8 +1,5 @@
 # FanNet
 
-## Correspondence Task
-Will be available soon!
-
 ## Classification Task
 This experiment classifies meshes from the SHREC2011 dataset in to 30 categories ('ant', 'pliers', 'laptop', etc). The dataset contains 20 meshes from each category, for a total of 600 inputs. The variants of each mesh are nonrigid deformed versions of one another, which makes intrinsic surface-based methods highly effective.
 
@@ -60,3 +57,6 @@ python classification_shrec11.py --dataset_type=simplified --input_features=hks 
 There will be variance in the final accuracy, because the networks generally predict just 0-3 test models incorrectly, and the test split is randomized. Perform multiple runs to get a good sample!
 
 **Note:** This experiment is configured to generate a random test/train split on each run. For this reason, no evaluation mode or pretrained models are included to avoid potential mistakes of testing on a set which overlaps with the train set which was used for the model.
+
+## Correspondence Task
+Will be available soon!

@@ -9,14 +9,7 @@ In this work, we introduce a fast, simple and novel mesh convolution operator fo
 [Paper](https://authors.elsevier.com/a/1lg0T_2EOxRGB1)
 
 ## Citation
-@article{sucu2025fannet,
-  title={FanNet: A mesh convolution operator for learning dense maps},
-  author={Sucu, G{\"u}ne{\c{s}} and Kalkan, Sinan and Sahillio{\u{g}}lu, Yusuf},
-  journal={Computers \& Graphics},
-  pages={104320},
-  year={2025},
-  publisher={Elsevier}
-}
+<pre> ```bibtex @article{sucu2025fannet, title={FanNet: A mesh convolution operator for learning dense maps}, author={Sucu, G{\"u}ne{\c{s}} and Kalkan, Sinan and Sahillio{\u{g}}lu, Yusuf}, journal={Computers \& Graphics}, pages={104320}, year={2025}, publisher={Elsevier} } ``` </pre>
 
 ## Classification Task
 This experiment classifies meshes from the SHREC2011 dataset in to 30 categories ('ant', 'pliers', 'laptop', etc). The dataset contains 20 meshes from each category, for a total of 600 inputs. The variants of each mesh are nonrigid deformed versions of one another, which makes intrinsic surface-based methods highly effective.

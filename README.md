@@ -6,7 +6,7 @@ In this work, we introduce a fast, simple and novel mesh convolution operator fo
 <img width="785" height="282" alt="pipeline" src="https://github.com/user-attachments/assets/db5fd11b-935a-404b-aea5-79876bc21ef2" />
 
 ## Link
-[Paper](https://authors.elsevier.com/a/1lg0T_2EOxRGB1)
+[Paper](https://www.sciencedirect.com/science/article/abs/pii/S009784932500161X?via%3Dihub)
 
 ## Citation
 ```bibtex
